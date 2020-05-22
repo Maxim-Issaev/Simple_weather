@@ -15,6 +15,7 @@
     <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="icons\01d%402x.png" />
@@ -36,6 +37,11 @@
     <None Remove="icons\04d.png" />
     <None Remove="icons\50d.png" />
     <None Remove="icons\error.png" />
+    <None Remove="icons\TabIcons\settings.png" />
+    <None Remove="icons\tabIcons\weather.png" />
+    <None Remove="icons\tabIcons\cloud.png" />
+    <None Remove="icons\tabIcons\settings.png" />
+    <None Remove="icons\tabIcons\cloud_black.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="icons\01d.png" />
@@ -57,5 +63,10 @@
     <EmbeddedResource Include="icons\04d.png" />
     <EmbeddedResource Include="icons\50d.png" />
     <EmbeddedResource Include="icons\error.png" />
+    <EmbeddedResource Include="icons\tabIcons\cloud.png" />
+    <EmbeddedResource Include="icons\tabIcons\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="icons\tabIcons\" />
   </ItemGroup>
 </Project>
