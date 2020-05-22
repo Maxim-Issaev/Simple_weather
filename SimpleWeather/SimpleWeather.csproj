@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DocumentationFile>bin\Debug\netstandard2.0\SimpleWeather.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="icons\01d%402x.png" />
+    <None Remove="icons\03n.png" />
+    <None Remove="icons\13n.png" />
+    <None Remove="icons\10d.png" />
+    <None Remove="icons\09d.png" />
+    <None Remove="icons\02n.png" />
+    <None Remove="icons\11d.png" />
+    <None Remove="icons\09n.png" />
+    <None Remove="icons\10n.png" />
+    <None Remove="icons\13d.png" />
+    <None Remove="icons\03d.png" />
+    <None Remove="icons\11n.png" />
+    <None Remove="icons\01n.png" />
+    <None Remove="icons\02d.png" />
+    <None Remove="icons\50n.png" />
+    <None Remove="icons\04n.png" />
+    <None Remove="icons\04d.png" />
+    <None Remove="icons\50d.png" />
+    <None Remove="icons\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="icons\01d.png" />
+    <EmbeddedResource Include="icons\03n.png" />
+    <EmbeddedResource Include="icons\13n.png" />
+    <EmbeddedResource Include="icons\10d.png" />
+    <EmbeddedResource Include="icons\09d.png" />
+    <EmbeddedResource Include="icons\02n.png" />
+    <EmbeddedResource Include="icons\11d.png" />
+    <EmbeddedResource Include="icons\09n.png" />
+    <EmbeddedResource Include="icons\10n.png" />
+    <EmbeddedResource Include="icons\13d.png" />
+    <EmbeddedResource Include="icons\03d.png" />
+    <EmbeddedResource Include="icons\11n.png" />
+    <EmbeddedResource Include="icons\01n.png" />
+    <EmbeddedResource Include="icons\02d.png" />
+    <EmbeddedResource Include="icons\50n.png" />
+    <EmbeddedResource Include="icons\04n.png" />
+    <EmbeddedResource Include="icons\04d.png" />
+    <EmbeddedResource Include="icons\50d.png" />
+    <EmbeddedResource Include="icons\error.png" />
+  </ItemGroup>
+</Project>

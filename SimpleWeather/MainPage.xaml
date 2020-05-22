@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimpleWeather.MainPage">
+<ContentPage.Content>
+    <StackLayout Margin="12,200">
+    <Frame CornerRadius="20">
+    <StackLayout>
+        <Image x:Name="Image1" WidthRequest="100" HeightRequest="100"/>
+       <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Label Text="Город:"/>
+            <Label Text="0" x:Name="Label1"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Температура:"/>
+            <Label Text="0" x:Name="Label2"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Состояние:"/>
+            <Label Text="0" x:Name="Label3"/>
+        </StackLayout>
+    </StackLayout>
+    </Frame>
+        <StackLayout> <Frame Margin="0,15" Padding="5" CornerRadius="20" ><Entry x:Name="Editor1" Text="Москва" /></Frame> </StackLayout>
+        <Frame CornerRadius="20" Padding="0">
+            <Button CornerRadius="20"
+                       x:Name="Button1"
+                       Text="Обновить"
+                       Clicked="Button1_Clicked"
+                       BackgroundColor="White"
+                       /></Frame>
+    </StackLayout>
+</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,15 @@
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/SimpleWeather.csprojAssemblyReference.cache
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/SimpleWeather.csproj.CoreCompileInputs.cache
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/SimpleWeather.AssemblyInfoInputs.cache
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/SimpleWeather.AssemblyInfo.cs
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/bin/Debug/netstandard2.0/SimpleWeather.deps.json
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/bin/Debug/netstandard2.0/SimpleWeather.dll
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/bin/Debug/netstandard2.0/ref/SimpleWeather.dll
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/bin/Debug/netstandard2.0/SimpleWeather.pdb
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/SimpleWeather.dll
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/ref/SimpleWeather.dll
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/obj/Debug/netstandard2.0/SimpleWeather.pdb
+/Users/maxim/Projects/SimpleWeather/SimpleWeather/bin/Debug/netstandard2.0/SimpleWeather.xml
