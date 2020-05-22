@@ -4,7 +4,7 @@
         <ScrollView>
             <StackLayout Margin="12,200">
                 <Label Text="Геоданные" TextColor="LightGray"/>
-               <Frame>
+               <Frame CornerRadius="20">
                    <StackLayout Orientation="Horizontal">
                         <Label Text="Автоматические определение местоположения"/>
                         <Switch x:Name="Switch1"/>
