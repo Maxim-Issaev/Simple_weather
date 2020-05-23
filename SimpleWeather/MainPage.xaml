@@ -4,5 +4,6 @@
             xmlns:pages="clr-namespace:SimpleWeather"
             x:Class="SimpleWeather.MainPage">
     <pages:CurrentWeatherPage x:Name="TabPage1"/>
+    <pages:Weather4Page x:Name="TabPage3"/>
     <pages:SettingsPage x:Name="TabPage2"/>
 </TabbedPage>

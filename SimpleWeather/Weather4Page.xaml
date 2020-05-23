@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleWeather.Weather4Page">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Margin="12,200">
+            <StackLayout>
+                <Frame x:Name="Editor1Frame" Margin="0,15" Padding="5" CornerRadius="20" ><Entry x:Name="Editor1" Text="Москва" /></Frame>
+                <Frame x:Name="Label4Frame" Margin="0,15" CornerRadius="20"><Label Text="Местоположение определяется автоматические" HorizontalOptions="CenterAndExpand"/></Frame>
+                <Frame CornerRadius="20" Padding="0" Margin="0,15">
+                     <Button CornerRadius="20"
+                       x:Name="Button1"
+                       Clicked="Button1_ClickedAsync"
+                       Text="Обновить"
+                       BackgroundColor="White"
+                       /></Frame>
+                <ActivityIndicator x:Name="Indicator" Margin="20"/>
+            </StackLayout>
+            <StackLayout x:Name="WeatherStack">
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

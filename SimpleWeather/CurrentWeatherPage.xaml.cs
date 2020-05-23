@@ -47,7 +47,10 @@ namespace SimpleWeather
             {
                 Location loacation = await GetLocationAsync();
                 if (loacation == null)
+                {
+                    await DisplayAlert("Ошибка :(", "Не удалось получить местоположение", "Ok");
                     return null;
+                }
                 else
                     url = "http://api.openweathermap.org/data/2.5/weather?lat=" + Convert.ToString(loacation.Latitude) + "&lon=" + Convert.ToString(loacation.Longitude);
             }
@@ -132,12 +135,12 @@ namespace SimpleWeather
                 // Handle not enabled on device exception
                 return null;
             }
-            catch (PermissionException pEx)
+            catch (PermissionException)
             {
                 // Handle permission exception
                 return null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // Unable to get location
                 return null;

@@ -15,10 +15,12 @@ namespace SimpleWeather
         public MainPage()
         {
             InitializeComponent();
-            TabPage1.Title = "Погода сейчас";
+            TabPage1.Title = "Cейчас";
             TabPage1.IconImageSource = ImageSource.FromResource("SimpleWeather.icons.tabIcons.cloud.png");
             TabPage2.Title = "Настройки";
             TabPage2.IconImageSource = ImageSource.FromResource("SimpleWeather.icons.tabIcons.settings.png");
+            TabPage3.Title = "5 дней";
+            TabPage3.IconImageSource = ImageSource.FromResource("SimpleWeather.icons.tabIcons.cloud.png");
         }
     }
 }
