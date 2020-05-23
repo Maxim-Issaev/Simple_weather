@@ -11,9 +11,18 @@ namespace SimpleWeather
         {
             InitializeComponent();
             Switch1.Toggled += Switch1_Toggled;
-            Switch1.IsToggled = CrossSettings.Current.GetValueOrDefault("UseGPS",false);
+            Switch1.IsToggled = CrossSettings.Current.GetValueOrDefault("UseGPS", false);
+            int item = CrossSettings.Current.GetValueOrDefault("WeatherStep", 8);
+            if (item == 8)
+                Picker1.SelectedIndex = 0;
+            else if (item == 4)
+                Picker1.SelectedIndex = 1;
+            else if (item == 2)
+                Picker1.SelectedIndex = 2;
+            else if (item == 1)
+                Picker1.SelectedIndex = 3;
         }
-        private void Switch1_Toggled(object sender, ToggledEventArgs e)
+            private void Switch1_Toggled(object sender, ToggledEventArgs e)
         {
             if (Switch1.IsToggled)
             {
@@ -23,6 +32,19 @@ namespace SimpleWeather
             {
                 CrossSettings.Current.AddOrUpdateValue("UseGPS", false);
             }
+        }
+
+        void Picker1_SelectedIndexChanged(System.Object sender, System.EventArgs e)
+        {
+            int item = Picker1.SelectedIndex;
+            if (item == 0)
+                CrossSettings.Current.AddOrUpdateValue("WeatherStep", 8);
+            else if (item==1)
+                 CrossSettings.Current.AddOrUpdateValue("WeatherStep", 4);
+            else if (item == 2 )
+                CrossSettings.Current.AddOrUpdateValue("WeatherStep", 2);
+            else if (item==3)
+                CrossSettings.Current.AddOrUpdateValue("WeatherStep", 1);
 
         }
     }

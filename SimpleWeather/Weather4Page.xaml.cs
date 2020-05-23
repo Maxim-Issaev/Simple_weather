@@ -143,20 +143,24 @@ namespace SimpleWeather
         {
             Indicator.IsRunning = true;
             Weather4 weather = await GetWeatherAsync();
-            string Temperature, Status,Time, Icon;
+            string Temperature, Status, Icon;
+            DateTime Time;
             if (weather != null)
             {
                 WeatherStack.Children.Clear();
                 int ListSize = weather.WeatherList.Length;
                 for (int i=0; i<ListSize;i++)
                 {
-                    if (i % 8 == 0)
+                    if (i % CrossSettings.Current.GetValueOrDefault("WeatherStep", 8) == 0)
                     {
-                        Temperature = Convert.ToString(weather.WeatherList[i].MainInfo.Temp) + "°C";
+                        Temperature = Convert.ToInt32(weather.WeatherList[i].MainInfo.Temp).ToString() + "°C";
                         Status = weather.WeatherList[i].CommonWeather[0].Description;
-                        Time = weather.WeatherList[i].Time;
+                        Time = Convert.ToDateTime(weather.WeatherList[i].Time);
                         Icon = weather.WeatherList[i].CommonWeather[0].Icon;
-                        Create_Frame(Temperature, Status, Time, Icon);
+                        if (CrossSettings.Current.GetValueOrDefault("WeatherStep", 8) == 8)
+                            Create_Frame(Temperature, Status, Time.ToString("dd MMMM"), Icon);
+                        else
+                            Create_Frame(Temperature, Status, Time.ToString("dd MMMM HH:mm"), Icon);
                     }
                 }
             }

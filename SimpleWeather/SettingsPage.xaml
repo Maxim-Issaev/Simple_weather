@@ -10,6 +10,21 @@
                         <Switch x:Name="Switch1"/>
                    </StackLayout>
                </Frame>
+                <Label Text="Погода" TextColor="LightGray"/>
+               <Frame CornerRadius="20">
+                   <StackLayout Orientation="Horizontal">
+                        <Label Text="Количество карточек"/>
+                        <Picker x:Name="Picker1" SelectedIndexChanged="Picker1_SelectedIndexChanged" WidthRequest="120">
+                            <Picker.Items>
+                                 <x:String>1 в день</x:String>
+                                 <x:String>2 в день</x:String>
+                                 <x:String>4 в день</x:String>
+                                 <x:String>8 в день</x:String>
+                            </Picker.Items>
+                        </Picker>
+                            
+                   </StackLayout>
+               </Frame>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
