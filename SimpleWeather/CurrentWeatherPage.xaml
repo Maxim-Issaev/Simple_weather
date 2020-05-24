@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleWeather.CurrentWeatherPage">
+<ContentPage x:Name="ContentPage1" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleWeather.CurrentWeatherPage">
    <ContentPage.Content>
+    <StackLayout>
+    <StackLayout x:Name="Stack1" Padding="0,44,0,10">
+        <Label Text="Сейчас" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+    </StackLayout>
     <ScrollView>
     <StackLayout Margin="12,200">
     <Frame CornerRadius="20">
@@ -34,5 +38,6 @@
         <ActivityIndicator x:Name="Indicator" Margin="20"/>
     </StackLayout>
     </ScrollView>
+    </StackLayout>
 </ContentPage.Content>
 </ContentPage>

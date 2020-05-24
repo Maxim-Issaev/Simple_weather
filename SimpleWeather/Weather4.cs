@@ -11,7 +11,8 @@ namespace SimpleWeather
         }
         [JsonProperty("list")]
         public WeatherList[] WeatherList{get;set;}
-        public string Name { get; set; }
+        [JsonProperty("city")]
+        public City City { get; set; }
     }
     public class  WeatherList
     {
@@ -21,5 +22,9 @@ namespace SimpleWeather
         public CommonWeather[] CommonWeather { get; set; }
         [JsonProperty("dt_txt")]
         public string Time { get; set; }
+    }
+    public class City
+    {
+        public string Name { get; set; }
     }
 }

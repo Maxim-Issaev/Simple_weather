@@ -15,6 +15,15 @@ namespace SimpleWeather
         public Weather4Page()
         {
             InitializeComponent();
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                ContentPage1.BackgroundColor = Color.FromRgb(242, 242, 247);
+                Stack1.BackgroundColor = Color.FromRgb(249, 249, 248);
+            }
+            if (Device.RuntimePlatform==Device.Android)
+            {
+                Stack1.IsVisible = false;
+            }
         }
         protected override async void OnAppearing()
         {
@@ -87,11 +96,11 @@ namespace SimpleWeather
         }
         public async Task<Weather4> GetWeatherAsync()
         {
-            string url = "http://api.openweathermap.org/data/2.5/forecast?q=";
+            string url = "http://api.openweathermap.org/data/2.5/forecast?";
             //string url = "http://api.openweathermap.org/data/2.5/forecast?q=Moscow&appid=19cfe7ddf6b7b30677251b4ea4f0c6c0&units=metric&lang=ru";
             if (CrossSettings.Current.GetValueOrDefault("UseGPS", false) == false)
             {
-                    url += Editor1.Text;
+                    url +="q="+ Editor1.Text;
             }
             else
             {
@@ -102,7 +111,7 @@ namespace SimpleWeather
                     return null;
                 }
                 else
-                    url += Convert.ToString(loacation.Latitude) + "&lon=" + Convert.ToString(loacation.Longitude);
+                    url += "lat="+ Convert.ToString(loacation.Latitude) + "&lon=" + Convert.ToString(loacation.Longitude);
             }
             url+= "&appid=19cfe7ddf6b7b30677251b4ea4f0c6c0&units=metric&lang=ru";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -142,21 +151,22 @@ namespace SimpleWeather
         private async Task UpdateWeatherAsync() // обновление погоды и обновление погоды на giu
         {
             Indicator.IsRunning = true;
-            Weather4 weather = await GetWeatherAsync();
+            Weather4 weather4 = await GetWeatherAsync();
             string Temperature, Status, Icon;
             DateTime Time;
-            if (weather != null)
+            if (weather4 != null)
             {
+                Label1.Text =  weather4.City.Name;
                 WeatherStack.Children.Clear();
-                int ListSize = weather.WeatherList.Length;
+                int ListSize = weather4.WeatherList.Length;
                 for (int i=0; i<ListSize;i++)
                 {
                     if (i % CrossSettings.Current.GetValueOrDefault("WeatherStep", 8) == 0)
                     {
-                        Temperature = Convert.ToInt32(weather.WeatherList[i].MainInfo.Temp).ToString() + "°C";
-                        Status = weather.WeatherList[i].CommonWeather[0].Description;
-                        Time = Convert.ToDateTime(weather.WeatherList[i].Time);
-                        Icon = weather.WeatherList[i].CommonWeather[0].Icon;
+                        Temperature = Convert.ToInt32(weather4.WeatherList[i].MainInfo.Temp).ToString() + "°C";
+                        Status = weather4.WeatherList[i].CommonWeather[0].Description;
+                        Time = Convert.ToDateTime(weather4.WeatherList[i].Time);
+                        Icon = weather4.WeatherList[i].CommonWeather[0].Icon;
                         if (CrossSettings.Current.GetValueOrDefault("WeatherStep", 8) == 8)
                             Create_Frame(Temperature, Status, Time.ToString("dd MMMM"), Icon);
                         else
@@ -166,8 +176,9 @@ namespace SimpleWeather
             }
             else
             {
-                Editor1.Text = "Error";
+                Label1.Text = "Error";
             }
+            Editor1.Text = "";
             Indicator.IsRunning = false;
 
         }
@@ -199,6 +210,6 @@ namespace SimpleWeather
                 // Unable to get location
                 return null;
             }
-        }
+        } 
     }
 }

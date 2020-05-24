@@ -10,6 +10,15 @@ namespace SimpleWeather
         public SettingsPage()
         {
             InitializeComponent();
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                ContentPage1.BackgroundColor = Color.FromRgb(242, 242, 247);
+                Stack1.BackgroundColor = Color.FromRgb(249, 249, 248);
+            }
+            if (Device.RuntimePlatform==Device.Android)
+            {
+                Stack1.IsVisible = false;
+            }
             Switch1.Toggled += Switch1_Toggled;
             Switch1.IsToggled = CrossSettings.Current.GetValueOrDefault("UseGPS", false);
             int item = CrossSettings.Current.GetValueOrDefault("WeatherStep", 8);

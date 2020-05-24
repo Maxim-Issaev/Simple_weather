@@ -22,11 +22,19 @@ namespace SimpleWeather
         public CurrentWeatherPage()
         {
             InitializeComponent();
+            if (Device.RuntimePlatform == Device.iOS)
+            {
+                ContentPage1.BackgroundColor = Color.FromRgb(242, 242, 247);
+                Stack1.BackgroundColor = Color.FromRgb(249, 249, 248);
+            }
+            if (Device.RuntimePlatform==Device.Android)
+            {
+                Stack1.IsVisible=false;
+            }
         }
         protected override async void  OnAppearing()
         {
             base.OnAppearing();
-            await UpdateWeatherAsync();
             if (CrossSettings.Current.GetValueOrDefault("UseGPS",false)==true)
             {
                 Editor1Frame.IsVisible = false;
