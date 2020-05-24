@@ -2,15 +2,15 @@
 <ContentPage x:Name="ContentPage1" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SimpleWeather.Weather4Page">
     <ContentPage.Content>
         <StackLayout>
-        <StackLayout x:Name="Stack1" Padding="0,44,0,10">
-        <Label Text="Погода на 5 дней" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+        <StackLayout x:Name="Stack1" Padding="0,54,0,10" Margin="-10">
+        <Label  Text="Погода на 5 дней" HorizontalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold" />
         </StackLayout>
         <ScrollView>
-        <StackLayout Margin="12,200,12,0">
-            <StackLayout>
-                <Frame x:Name="Editor1Frame" Margin="0,15,0,0" Padding="5" CornerRadius="20" ><Entry x:Name="Editor1" Text="Москва" /></Frame>
-                <Frame x:Name="Label4Frame" Margin="0,15,0,0" CornerRadius="20"><Label Text="Местоположение определяется автоматические" HorizontalOptions="CenterAndExpand"/></Frame>
-                <Frame CornerRadius="20" Padding="0" Margin="0,15">
+        <StackLayout Margin="12,0,12,0">
+            <StackLayout Padding="0,20">
+                <Frame x:Name="Editor1Frame" Margin="0,10,0,0" Padding="5" CornerRadius="20" ><Entry x:Name="Editor1" Text="Москва" /></Frame>
+                <Frame x:Name="Label4Frame" Margin="0,10,0,0" CornerRadius="20"><Label Text="Местоположение определяется автоматически" HorizontalOptions="CenterAndExpand"/></Frame>
+                <Frame CornerRadius="20" Padding="0" Margin="0,10">
                      <Button CornerRadius="20"
                        x:Name="Button1"
                        Clicked="Button1_ClickedAsync"

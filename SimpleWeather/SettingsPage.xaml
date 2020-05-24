@@ -5,8 +5,8 @@
              x:Name="ContentPage1">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout x:Name="Stack1" Padding="0,44,0,10">
-            <Label Text="Настройки" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+            <StackLayout x:Name="Stack1" Padding="0,54,0,10" Margin="-10">
+            <Label Text="Настройки" HorizontalOptions="CenterAndExpand" FontSize="Large" FontAttributes="Bold"/>
            </StackLayout>
        <ScrollView>
             <StackLayout Margin="12,200">
